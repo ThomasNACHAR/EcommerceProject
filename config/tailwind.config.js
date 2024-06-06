@@ -16,9 +16,14 @@ module.exports = {
         body: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
       },
       backgroundColor: {
-        theme: '#0f0f0f'
+        theme: '#0f0f0f',
+        primary: '#800080'
+      },
+      colors: {
+        primary: '#800080'
       }
     },
+
   },
   plugins: [
     require('@tailwindcss/forms'),

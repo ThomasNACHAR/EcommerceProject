@@ -1,5 +1,15 @@
-<header class="bg-white text-black w-full">
-  <nav>
-    <%= image_tag("icons/menu.svg", style: "fill: white") %>
+<header class="w-full fixed top-0 left-0">
+  <nav class="mx-12 my-4 flex justify-between">
+    <div>
+      <%= image_tag("icons/menu.svg", class: "w-32 cursor-pointer") %>
+    </div>
+    <div>
+      <%= link_to(root_path) do  %>
+        <%= image_tag("logo.png", class: "w-32 cursor-pointer") %>
+      <% end %>
+    </div>
+    <div>
+      <%= image_tag("icons/user.svg", class: "w-32 cursor-pointer") %>
+    </div>
   </nav>
 </header>
