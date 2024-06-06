@@ -5,13 +5,19 @@ module.exports = {
     './public/*.html',
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
-    './app/views/**/*.{erb,haml,html,slim}'
+    './app/views/**/*',
+    './app/assets/stylesheets/**/*.css',
   ],
   theme: {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        title: ['Zuume', 'sans-serif'],
+        body: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
       },
+      backgroundColor: {
+        theme: '#0f0f0f'
+      }
     },
   },
   plugins: [
