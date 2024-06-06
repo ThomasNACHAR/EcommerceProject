@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   root "home#index"
 
+  resource :user do
+    get 'login'
+  end
+
   # Defines the root path route ("/")
   # root "posts#index"
 end
