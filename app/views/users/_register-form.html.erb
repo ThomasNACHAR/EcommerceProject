@@ -1,4 +1,4 @@
-<%= form_with class: "p-24 w-full ml-8 flex flex-col gap-6", url: login_user_path, method: :post do |form| %>
+<%= form_with class: "p-24 w-full ml-8 flex flex-col gap-6", url: register_user_path, method: :post do |form| %>
   <div class="grid gap-6">
     <div class="flex flex-col w-full">
       <%= form.label :first_name, "Prénom:", class: "w-full" %>
@@ -16,7 +16,7 @@
     </div>
     <div class="flex flex-col">
       <%= form.label :phone, "Numéro de téléphone:" %>
-      <%= form.telephone_field :phone, class: "input" %>
+      <%= form.telephone_field :telephone, class: "input" %>
     </div>
   </div>
   <div class="grid gap-6">
