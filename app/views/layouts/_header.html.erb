@@ -8,7 +8,12 @@
         <%= image_tag("logo.png", class: "w-32 cursor-pointer") %>
       <% end %>
     </div>
-    <div>
+    <div class="flex justify-center items-center gap-4">
+      <span>
+      <% if current_user %>
+        <%= current_user.first_name %>
+      <% end %>
+      </span>
       <%= link_to login_user_path(original_url: request.original_url), data: {turbo_frame: "modal"} do %>
         <%= image_tag("icons/user.svg", class: "w-32 cursor-pointer") %>
       <% end %>
