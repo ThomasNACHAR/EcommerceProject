@@ -1,35 +1,11 @@
-<%= form_with class: "p-8", url: login_user_path, method: :post do |form| %>
-  <div class="grid grid-cols-2 gap-6">
-    <div class="flex flex-col">
-      <%= form.label :first_name, "Prénom:", class: "" %>
-      <%= form.text_field :first_name, class: "input" %>
-    </div>
-    <div class="flex flex-col">
-      <%= form.label :last_name, "Nom:" %>
-      <%= form.text_field :last_name, class: "input" %>
-    </div>
+<%= form_with class: "p-8 flex flex-col gap-8", url: login_user_path, method: :post do |form| %>
+  <div class="flex flex-col">
+    <%= form.label :email, "Adresse e-mail:" %>
+    <%= form.email_field :email, class: "input" %>
   </div>
-  <div class="grid grid-cols-2 gap-6">
-    <div class="flex flex-col">
-      <%= form.label :email, "Adresse e-mail:" %>
-      <%= form.email_field :email, class: "input" %>
-    </div>
-    <div class="flex flex-col">
-      <%= form.label :phone, "Numéro de téléphone:" %>
-      <%= form.telephone_field :phone, class: "input" %>
-    </div>
+  <div class="flex flex-col">
+    <%= form.label :password, "Mot de passe:" %>
+    <%= form.password_field :password, class: "input" %>
   </div>
-  <div class="grid grid-cols-2 gap-6">
-    <div class="flex flex-col">
-      <%= form.label :password, "Mot de passe" %>
-      <%= form.password_field :password, class: "input" %>
-    </div>
-    <div class="flex flex-col">
-      <%= form.label :password_confirmation, "Confirmer le mot de passe" %>
-      <%= form.password_field :password_confirmation, class: "input" %>
-    </div>
-  </div>
-  <div class="w-full flex justify-center items-center my-8">
-    <%= form.submit "Se connecter", class: "font-extrabold text-3xl py-8 px-12 border-4 border-primary rounded-full" %>
-  </div>
+  <%= form.submit "Se connecter", class: "submit" %>
 <% end %>

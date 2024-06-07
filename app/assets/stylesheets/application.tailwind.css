@@ -6,3 +6,7 @@
     @apply bg-theme border-2 border-primary;
 }
 
+.submit, .button {
+    @apply font-extrabold text-3xl py-8 px-12 border-4 border-primary rounded-full;
+}
+

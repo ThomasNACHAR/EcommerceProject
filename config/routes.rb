@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resource :user do
     get 'login'
     post 'login'
+    get 'register'
+    post 'register'
   end
 
   # Defines the root path route ("/")
