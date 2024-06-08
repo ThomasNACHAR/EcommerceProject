@@ -37,6 +37,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def logout
+    if current_user
+      session.delete(:user_login)
+      redirect_to root_path, notice: "Déconnexion réussie !"
+    end
+  end
+
   private
 
   def user_params
