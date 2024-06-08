@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   root "home#index"
 
+  get "menu", to: "products#menu"
+
   scope '/notifications' do
     get 'delete/:id' => "application#delete_notification", as: 'delete_notification'
   end

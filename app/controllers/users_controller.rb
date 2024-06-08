@@ -9,18 +9,12 @@ class UsersController < ApplicationController
       if @user
         if @user.authenticate(user_params[:password])
           session[:user_login] = BCrypt::Password.create(@user.email)
-          redirect_to root_path
+          redirect_to params[:original_url] || root_path
         else
-          render turbo_stream:
-                   turbo_stream.append("notifications",
-                                       partial: "layouts/notification",
-                                       locals: {id: SecureRandom.uuid, message: "Mot de passe invalide", type: "error"})
+          add_notification("Mot de passe invalide", "error")
         end
       else
-        render turbo_stream:
-                 turbo_stream.append("notifications",
-                                     partial: "layouts/notification",
-                                     locals: {id: SecureRandom.uuid, message: "L'utilisateur n'existe pas", type: "error"})
+        add_notification("L'utilisateur n'existe pas", "error")
       end
     else
       @user = User.new
@@ -34,7 +28,7 @@ class UsersController < ApplicationController
         redirect_to root_path, notice: "Inscription réussie !"
       else
         puts @user.errors.full_messages
-        flash.now[:alert] = "Erreur d'inscription"
+        add_notification("Erreur d'inscription", "error")
         render :register
       end
     else

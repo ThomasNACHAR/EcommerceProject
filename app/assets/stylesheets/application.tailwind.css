@@ -7,9 +7,10 @@
 }
 
 .submit, .button {
-    @apply font-extrabold text-3xl py-8 px-12 border-4 border-primary rounded-full;
+    @apply font-extrabold text-3xl py-8 px-12 border-4 border-primary rounded-full cursor-pointer;
 }
 
+/* Animation d'apparition */
 @keyframes pop {
     0% {
         transform: scale(0);
@@ -21,5 +22,33 @@
 
 .animation-pop {
     animation: pop 0.5s ease-in-out;
+}
+
+/* Animation de modal */
+@keyframes modal {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.animation-modal {
+    animation: modal 0.5s ease-in-out;
+}
+
+/* Animation de menu */
+@keyframes menu {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.animation-menu {
+    animation: menu 0.3s ease-in-out;
 }
 
