@@ -1,0 +1,6 @@
+<div id="<%= id %>" class="animation-pop bg-black font-extrabold text-lg my-8 py-8 px-4 border-2 border-primary shadow-white shadow-md text-center rounded-xl relative">
+    <span><%= message %></span>
+    <%= link_to delete_notification_path(id), class: "absolute top-0 right-0 h-8 w-8 mt-2 mr-2" do %>
+      <%= image_tag("icons/x") %>
+    <% end %>
+</div>

@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   root "home#index"
 
+  scope '/notifications' do
+    get 'delete/:id' => "application#delete_notification", as: 'delete_notification'
+  end
+
   resource :user do
     get 'login'
     post 'login'

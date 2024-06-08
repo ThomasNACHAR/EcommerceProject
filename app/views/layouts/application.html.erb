@@ -13,6 +13,10 @@
 
   <body class="bg-theme text-white font-body">
   <%= render "layouts/header" %>
+
+    <div class="fixed top-0 right-0 z-20 px-4 w-[350px]">
+      <%= turbo_frame_tag "notifications" %>
+    </div>
     <main class="mt-52">
       <%= yield %>
 

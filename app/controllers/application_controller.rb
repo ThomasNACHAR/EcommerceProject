@@ -1,5 +1,12 @@
 class ApplicationController < ActionController::Base
+  require 'securerandom' #Pour générer des id uniques
+
   helper_method :current_user
+
+  def delete_notification
+    id = params[:id]
+    render turbo_stream: turbo_stream.remove(id)
+  end
 
   private
 
