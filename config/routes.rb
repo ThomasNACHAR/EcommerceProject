@@ -23,6 +23,12 @@ Rails.application.routes.draw do
     get 'logout'
   end
 
+  resources :products, only: [:index, :show], param: :slug
+
+  namespace :admin do
+    resources :products, param: :slug
+  end
+
   # Defines the root path route ("/")
   # root "posts#index"
 end
