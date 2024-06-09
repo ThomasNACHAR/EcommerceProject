@@ -1,4 +1,4 @@
-class Product < ApplicationRecord
+class Category < ApplicationRecord
   extend FriendlyId
   friendly_id :label, use: :slugged
 
