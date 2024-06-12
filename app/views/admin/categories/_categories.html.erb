@@ -1,6 +1,16 @@
 <div class="flex flex-col justify-center items-center m-8 gap-8">
   <h2 class="font-bold text-3xl">Les catégories</h2>
   <% @categories.each do |category| %>
-    <p><%= category.label %></p>
+    <div class="flex gap-8">
+      <p class="flex-1"><%= category.label %></p>
+      <%= link_to edit_admin_category_path(category) do %>
+        <%= image_tag("icons/pencil.svg") %>
+      <% end %>
+      <%= form_with url: admin_category_path(category), data: { turbo_frame: 'categories_dashboard' }, method: :delete do |form| %>
+        <%= form.button type: :submit do %>
+          <%= image_tag("icons/x.svg") %>
+        <% end %>
+      <% end %>
+    </div>
   <% end %>
 </div>
