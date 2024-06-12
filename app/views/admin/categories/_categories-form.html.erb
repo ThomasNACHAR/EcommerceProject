@@ -1,0 +1,7 @@
+<%= form_with model: [:admin, @category], data: { turbo_frame: 'categories_dashboard' }, class: "flex flex-col gap-8" do |form| %>
+  <div class="flex flex-col">
+    <%= form.label :label, "Libellé:", class: "text-white" %>
+    <%= form.text_field :label, class: "input" %>
+  </div>
+  <%= form.submit "Créer la catégorie", class: "submit" %>
+<% end %>

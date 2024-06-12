@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       @user = User.find_by(email: user_params[:email])
       if @user
         if @user.authenticate(user_params[:password])
-          session[:user_login] = BCrypt::Password.create(@user.email)
+          session[:user_login] = @user.email
           redirect_to params[:original_url] || root_path
         else
           add_notification("Mot de passe invalide", "error")

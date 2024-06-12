@@ -24,9 +24,12 @@ Rails.application.routes.draw do
   end
 
   resources :products, only: [:index, :show], param: :slug
+  resources :categories, only: [:index, :show], param: :slug
 
   namespace :admin do
+    root "admin#index"
     resources :products, param: :slug
+    resources :categories, param: :slug
   end
 
   # Defines the root path route ("/")

@@ -1,0 +1,9 @@
+<%= turbo_frame_tag "admin_dashboard" do %>
+  <h1 class="font-bold md:text-6xl text-4xl text-center my-8">CATÉGORIES</h1>
+  <div class="flex justify-center">
+    <%= link_to "Créer une catégorie", new_admin_category_path, data: { turbo_frame: "categories_dashboard" }, class: "button" %>
+  </div>
+  <%= turbo_frame_tag "categories_dashboard" do %>
+    <%= render partial:'admin/categories/categories', categories: @categories %>
+  <% end %>
+<% end %>
