@@ -1,3 +1,9 @@
 <%= turbo_frame_tag "admin_dashboard" do %>
-  <h1>Produits</h1>
+  <h1 class="font-bold md:text-6xl text-4xl text-center my-8 font-title">CATÉGORIES</h1>
+  <%= turbo_frame_tag "products_dashboard" do %>
+    <div class="flex justify-center">
+      <%= link_to "Créer un produit", new_admin_product_path, data: { turbo_frame: "products_dashboard" }, class: "button" %>
+    </div>
+    <%= render partial:'admin/products/products', products: @products %>
+  <% end %>
 <% end %>

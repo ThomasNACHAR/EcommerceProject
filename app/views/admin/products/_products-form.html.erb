@@ -1,0 +1,35 @@
+<%= form_with model: [:admin, @product], data: { turbo_frame: 'products_dashboard' }, class: "flex flex-col gap-8" do |form| %>
+  <div class="flex gap-4">
+    <%= link_to admin_products_path do %>
+      <%= image_tag "icons/arrow-left.svg" %>
+    <% end %>
+    <span>Retour</span>
+  </div>
+  <div class="flex flex-col">
+    <%= form.label :label, "Libellé:" %>
+    <%= form.text_field :label, class: "input" %>
+  </div>
+  <div class="flex flex-col">
+    <%= form.label :sku, "SKU:" %>
+    <%= form.text_field :sku, class: "input" %>
+  </div>
+  <div class="flex flex-col">
+    <%= form.label :category_id, "Catégorie:" %>
+    <%= form.collection_select :category_id, Category.all, :id, :label, { prompt: "Sélectionner une catégorie..."}, class: "input" %>
+  </div>
+  <div class="flex gap-4">
+    <div class="flex flex-col">
+      <%= form.label :quantity, "Quantité:" %>
+      <%= form.number_field :quantity, class: "input" %>
+    </div>
+    <div class="flex flex-col">
+      <%= form.label :price, "Prix (en centimes):" %>
+      <%= form.number_field :price, class: "input" %>
+    </div>
+  </div>
+  <div class="flex flex-col">
+    <%= form.label :description, "Description:" %>
+    <%= form.text_area :description, class: "input" %>
+  </div>
+  <%= form.submit "Créer le produit", class: "submit" %>
+<% end %>
