@@ -10,6 +10,10 @@
     @apply font-extrabold text-3xl py-8 px-12 border-4 border-primary rounded-full cursor-pointer;
 }
 
+.panel-button {
+    @apply font-bold text-3xl p-8 flex justify-center items-center border-4 rounded-xl border-primary hover:shadow-xl hover:shadow-white cursor-pointer;
+}
+
 /* Animation d'apparition */
 @keyframes pop {
     0% {
